@@ -188,14 +188,6 @@ user=>
 
 ```
 
-A quick look at the contents of the m2 directory
+A quick look at the contents of the ~/.m2/ directory
 
-```sh
- ~/.m2/repository
-$ ls -la
-total 0
-drwxr-xr-x 1 droid 197121 0 Aug 17 06:51 ./
-drwxr-xr-x 1 droid 197121 0 Aug 17 06:51 ../
-drwxr-xr-x 1 droid 197121 0 Aug 17 06:51 clojure-complete/
-drwxr-xr-x 1 droid 197121 0 Aug 17 06:51 org/
-```
+![](_misc/m2%20directory%20contents.png)
