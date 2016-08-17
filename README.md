@@ -251,6 +251,73 @@ user=>
 
 ```
 
+The name in the REPL prompt before '=>' is the name of the active namespace. By default Clojure uses the 'user' namespace.
+
 A quick look at the contents of the ~/.m2/ directory
 
 ![](_misc/m2%20directory%20contents.png)
+
+
+### How REPL works
+
+When the user types a form in the REPL prompt and hits enter, 
+
+**READ**
+
+the stream of characters are read by the Clojure *reader*, which converts the input stream into Clojure data structures
+
+**EVALUATE**
+
+The constructed data structures are *evaluated* and the result is produced (which is mostly another data structure)
+
+**PRINT**
+
+The Clojure *printer* attempts to prints the result in a format that can be understood by the Clojure reader.
+
+**LOOP**
+
+Clojure *loops* back and waits for further input from the user.
+
+Examples of some expressions evaluated at the REPL prompt
+
+```sh
+$ lein repl
+nREPL server started on port 50875 on host 127.0.0.1 - nrepl://127.0.0.1:50875
+REPL-y 0.3.7, nREPL 0.2.12
+Clojure 1.8.0
+Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b15
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=> (+ 1 2)
+3
+user=> (+ 2 5)
+7
+user=> (* 2 5)
+10
+user=> (/ 5 2)
+5/2
+user=> (- 5 2)
+3
+user=>
+```
+
+More than one form can be typed on the same line 
+
+```sh
+user=> (+ 5 10) "Second form on the same line"
+15
+"Second form on the same line"
+```
+
+
+```sh
+user=> (def mul (fn [op1 op2] (* op1 op2)))
+#'user/mul
+user=> (mul 2 5)
+10
+```
