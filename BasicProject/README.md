@@ -3,6 +3,10 @@
 Creating a new application project with the *app* template
 
 ```sh
+$ mkdir BasicProject
+
+$ cd BasicProject
+
 $ lein new app BasicProject
 Project names containing uppercase letters are not recommended
 and will be rejected by repositories like Clojars and Central.
