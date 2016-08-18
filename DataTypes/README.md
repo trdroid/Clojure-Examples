@@ -3,12 +3,31 @@
 
 ### Lists
 
-Lists are the basic collection data strcuture that Clojure offers. Lists in Clojure are singly linked lists which implies
+Lists are the classic collection data structure that is offered by Clojure (and most commonly by other Lisp language; as the name Lisp itself comes from *list processing*). Lists in Clojure are singly linked lists which implies that
 
-* elements can be added or removed from the front of the list
+* elements can only be added or removed from the front of the list
 * multiple lists can share the same tail of the list (which makes it an immutable data structure)
 
-Clojure provides the following functions to operate on a list
+**Literal**
+
+A list literal is written with parentheses.
+
+```clojure
+()
+(1 2 3)
+```
+
+NOTE: An empty list is not the same as *nil*
+
+**Heterogeneity**
+
+A list can contain items of any type, including other collecion types.
+
+```clojure
+(1 2 3)
+(1 (a b c) 2 3 4)
+(1 2 :symbol text)
+```
 
 **list**
 
@@ -23,6 +42,17 @@ user=> (def l (list 8 9 10))
 #'user/l
 user=> (list? l)
 true
+```
+
+Clojure provides the following functions to operate on a list
+
+**count** 
+
+Use the *count* function to count the number of items in constant time.
+
+```sh
+user=> (count myList)
+3
 ```
 
 **peek & pop**
@@ -40,15 +70,6 @@ user=> (pop myList)
 (2 3)
 user=> myList
 (1 2 3)
-```
-
-**count** 
-
-Use the *count* function to count the number of items in constant time.
-
-```sh
-user=> (count myList)
-3
 ```
 
 **conj**
@@ -89,9 +110,9 @@ CompilerException java.lang.ClassCastException: java.lang.Long cannot be cast to
 
 ```
 
-When a Clojure reader reads and parses a list, it evaluates it by treating the first element as a function and passes the rest of the elements as arguments to that function.
-For example, when the expression (+ 1 2 3 4), which is a list, is entered at an REPL prompt, it is read and parsed by the Clojure reader,
-which then evaluates it by calling the + function with the arguments 1, 2, 3 and 4.
+When a Clojure reader reads and parses a list, it evaluates it by treating the first symbol as a function or a macro or a special operator. If the first symbol is a function then it evaluates the rest of the items/expressions and passes their values as arguments to that function. If the first symbol is a macro or a special operator, the rest of the items/expressions are processed as defined by the macro/operator and are not necessarily evaluated.
+
+For example, when the expression (+ 1 2 3 4), which is a list, is entered at an REPL prompt, it is read and parsed by the Clojure reader, which then evaluates it by calling the + function with the arguments 1, 2, 3 and 4.
 
 Similarly, Clojure tried evaluating the list literal (1 2 3) like all lists by attempting to call a function '1' and passing it arguments 2 and 3, which resulted in an exception.
 
@@ -103,4 +124,30 @@ user=> (def myList '(1 2 3))
 user=> myList
 (1 2 3)
 ```
+
+**Lists for Clojure code**
+
+Clojure code is represented using Clojure data structures. List is an essential data structure used to represent expressions in Clojure code. Each expression in the code is a list, which can contain other data structures like vectors.
+
+### Vectors
+
+A vector is collection type that can store a series of elements where each element can be indexed by number. A vector literal is represented using square brackets.
+
+
+**Vectors vs Lists**
+
+*Similarities*
+
+* heterogeneous types
+
+*Differences*
+
+* Vectors provide fast random access to its elements by allowing the elements to be accessed with a number index.
+* Vectors evaluate each item in order
+* 
+
+
+**Creation**
+
+A vector can be created using the *vector* function that Clojure provides or literally using a vector literal.
 
