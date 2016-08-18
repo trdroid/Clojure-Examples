@@ -23,7 +23,7 @@ A list can contain items of any type, including other collecion types.
 ```clojure
 (1 2 3)
 (1 (a b c) 2 3 4)
-(1 2 :symbol text)
+(1 2 :symbol "text")
 ```
 
 **list**
