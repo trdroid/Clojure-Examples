@@ -19,3 +19,10 @@ Valid keywords:
 user=> (keyword "myvar")
 :myvar
 ```
+
+### Usages
+
+Keywords are widely used as 
+
+* keys in hash maps 
+* enumerated values
