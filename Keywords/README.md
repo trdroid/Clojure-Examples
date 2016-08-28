@@ -5,13 +5,21 @@ Clojure offers a type called *keyword* as a shorthand for representing symbols a
 
 A *keyword* always evalutes to itself and never references or evaluates to another value.
 
-### Constructing a keyword
+**Literal Syntax**
 
-A keyword can be constructed by preceding a symbol with a ':' or by using the *keyword* function.
+The literal syntax of a keyword is prefixed by a colon ':', but the colon is not part of the name itself. 
 
 Valid keywords: 
 
-:myvar, :+myvar, :->myvar, :-, :+
+:NameOfMyKeyword
+
+:myvar, :+myvar, :->myvar
+
+:-, :+, :?, :5
+
+**Constructing a keyword**
+
+A keyword can be constructed by preceding a symbol with a ':' or by using the *keyword* function.
 
 *Using the keyword function*
 
@@ -25,4 +33,4 @@ user=> (keyword "myvar")
 Keywords are widely used as 
 
 * keys in hash maps 
-* enumerated values
+* enumeration values
