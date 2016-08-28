@@ -13,6 +13,8 @@ Valid keywords:
 
 :myvar, :+myvar, :->myvar, :-, :+
 
+*Using the keyword function*
+
 ```clojure
 user=> (keyword "myvar")
 :myvar
