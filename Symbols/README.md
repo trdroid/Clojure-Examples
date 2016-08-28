@@ -58,3 +58,15 @@ user=> 'myvar
 myvar
 ```
 
+Consider another example where a symbol 'a' is defined in the namespace 'user' to refer to value 10 . 
+When 'a' is entered at the REPL, it is read and evaluated to its value.
+However, when it is preceded with a ', it is treated as a value and is not evaluated.
+
+```clojure
+user=> (def a 10)
+#'user/a
+user=> a
+10
+user=> 'a
+a
+```
