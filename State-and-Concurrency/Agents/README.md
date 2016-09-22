@@ -18,12 +18,24 @@ An *agent* can hold values that can be mutated with *send* and *send-off* functi
 These functions accept the following parameters:
 
 * The agent that needs to be updated
-* A function that would be used to compute the new value of the agent.
+* A function, known as an **action**, that would be used to compute the new value of the agent. An **action**
 
-The function passed in to compute the new value of an agent is 
+    * is executed on a separate thread
+    * is applied at a later point in time
+    * should accept one ore more arguments
+    * should return a value that becomes the new value of the agent
 
-* executed on a separate thread &
-* applied at a later point in time
+
+```clojure
+(send the-agent the-function one-or-more-args)
+```
+
+which can also be represented as,
+
+```clojure
+(send the-agent the-action one-or-more-args)
+```
+
 
 *Inference*
 
