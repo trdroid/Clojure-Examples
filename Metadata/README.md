@@ -10,6 +10,14 @@ The *with-meta* function then returns a new object of the same type with the met
 
 The metadata that can be tagged to an object is always a map that can include other lists, vectors and maps. 
 
+```clojure
+
+```
+
+**Shorthand Syntax**
+
+The shorthand syntax for defining metadata is using the *reader macro: ^{}* which associates the metadata at *read* time rather than at *eval* time. 
+
 ### Equality and Identicalness
 
 
