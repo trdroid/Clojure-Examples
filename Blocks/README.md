@@ -1,6 +1,6 @@
 # Blocks
 
-In Clojure, a series or a block of expressions can be aggregated to be treated as one expression using the *do* form. 
+In Clojure, a series or a block of s-expressions can be aggregated to be treated as one expression using the *do* form. 
 
 ```clojure
 user=> (if (< 5 10)
@@ -13,7 +13,9 @@ user=> (if (< 5 10)
 5
 ```
 
-All the expressions in a block are executed, but only the value of the last expression evaluated is returned. 
+**Value**
+
+All the expressions in a block are executed, but only the value of the last expression evaluated is returned . 
 
 Example
 
@@ -30,3 +32,11 @@ user=> (if (< 5 10)
 ```
 
 The expression (+ x y) in the block is executed but the value of it is discarded.
+
+**Side Effects**
+
+If a higher-order form accepts only a single s-expression and certain side effects are desired, then a *do* form can be used to encapsulate the side effects while it can be passed to that higher-order form.
+
+
+
+
