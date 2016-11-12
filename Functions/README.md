@@ -38,4 +38,6 @@ The *defn* form
 user=> (defn add [num1 num2]
   #_=>  (+ num1 num2))
 #'user/add
+user=> (add 5 10)
+15
 ```
