@@ -1,5 +1,14 @@
 # Functions
 
+### Properties
+
+Clojure, derived from Lisp, is a functional language which treats functions as first class elements, which implies
+
+* Functions can be created dynamically at runtime
+* Functions can be accepted as arguments by other functions
+* Functions can be returned as values from other functions
+* Functions can be stored as elements/values in other data structures, like lists
+
 ### Defining functions
 
 In Clojure, functions are defined using the *defn* macro, the syntax of which is as follows:
@@ -7,9 +16,9 @@ In Clojure, functions are defined using the *defn* macro, the syntax of which is
 ```clojure
 (defn <function name>
   doc-string?
-  metadata attr-map?
-  [parameter list*]
-  prepost conditions-map?
+  metadata-attr-map?
+  [parameter-list*]
+  prepost-conditions-map?
   body-expressions*)
 ```
 
@@ -25,5 +34,8 @@ The *defn* form
 
 **Defining a basic function**
 
-
-
+```clojure
+user=> (defn add [num1 num2]
+  #_=>  (+ num1 num2))
+#'user/add
+```
