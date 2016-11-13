@@ -41,3 +41,14 @@ user=> (defn add [num1 num2]
 user=> (add 5 10)
 15
 ```
+
+The function can be reformatted to enclose the argument + function-body in a list as shown below. This helps in understanding function overloading on arity. 
+
+```clojure
+user=> (defn add
+  #_=>  ([num1 num2] (+ num1 num2))
+  #_=> )
+#'user/add
+user=> (add 5 10)
+15
+```
